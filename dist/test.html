@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+</head>
+<body>
+    <!-- 同时设置一个demo1和一个demo2 -->
+        <!-- demo1设置成text,为了显示文本,demo2设置成html,为了生效样式 -->
+        <!-- 这样就能一边打文本一边显示样式 -->
+    <style id="demo2"></style>
+    <div id="demo"></div>
+
+    <!-- 设置播放 暂停 变速按钮 -->
+    <div id="buttons">
+        <button id="btnPause">暂停</button>
+        <button id="btnPlay">播放</button>
+        <button id="btnSlow">慢速</button>
+        <button id="btnNormal">中速</button>
+        <button id="btnFast">快速</button>
+    </div>
+
+
+
+    <style>
+        *{box-sizing: border-box;}
+        *::before, *::after{box-sizing: border-box;}
+        /* 设置按钮的位置 */
+        #buttons{
+            right:0;
+            top: 0;
+            position: fixed;
+            z-index:10;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        /* 设置按钮间距和大小 */
+        #buttons>button{
+            margin-bottom: 10px;
+            padding: 4px 8px;
+        }
+        /* 把demo2隐藏 */
+        #demo2{
+            display: none;
+        }
+        /* 设定demo1(文本)的显示范围,多出去以滚动形式显示 */
+        #demo{
+            position:fixed;
+            height: 50vh;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 1px solid black;
+            /* 取消掉横向滚动条 */
+            overflow-y: auto;
+        }
+        /* 隐藏掉纵向滚动条的展示(仍然可用滚轮控制) */
+        #demo::-webkit-scrollbar{
+            display:none;
+        }
+        /* 把皮卡丘的位置固定在屏幕中 */
+        #html{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh;
+        }
+    </style>
+    <div id="html">
+        <!-- 把写的脸复制过来 -->
+        <div class="skin">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose">
+                <div class="yuan"></div>
+            </div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="mouth">
+                <div class="up">
+                    <div class="lip left"></div>
+                    <div class="lip right"></div>
+                </div>
+                <div class="down">
+                    <div class="yuan1">
+                        <div class="yuan2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <script src="/test.745ed489.js"></script>
+</body>
+</html>
